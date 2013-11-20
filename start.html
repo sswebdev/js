@@ -9,18 +9,33 @@
       #challenges { margin-top: 96px; background-color: #fffbb0; padding: 12px; }
       code { font-weight: bold; padding: 0px 3px;}
     </style>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
   </head>
 
   <body>
     <script>
-     //  Your Javascript code goes here.
-     //
+     $(document).ready(function() {
+        alert("The page is ready!");
+        $("#hide_and_show").on("click", function() {
+          $("h3").toggle();
+          $("ul").toggle();
+        })
+        $("#change_colors").on("click", function() {
+          $("li").css("color", "red");
+        })
+        $("#change_second").on("click", function() {
+          $("li:nth-child(2)").css("color", "red");
+        })
+        $("a").on("click", function() {
+          alert("Nice try!");
+        })
+     });
     </script>
 
     <p>You should see an alert box as soon as this page loads.</p>
-    <p>Click Here to Hide The Snack List.</p>
-    <p>Click here to change the color of the list items.</p>
-    <p>Click here to change the color of the second item.</p>
+    <p id="hide_and_show">Click Here to Toggle The Snack List.</p>
+    <p id="change_colors">Click here to change the color of the list items.</p>
+    <p id="change_second">Click here to change the color of the second item.</p>
 
     <h3>Snack List</h3>
     <ul>
