@@ -22,13 +22,16 @@
         })
         $("#change_colors").on("click", function() {
           $("li").css("color", "red");
-        })
+        });
         $("#change_second").on("click", function() {
           $("li:nth-child(2)").css("color", "red");
-        })
-        $("a").on("click", function() {
+        });
+        $("a").on("click", function(eventObject) {
           alert("Nice try!");
-        })
+          alert(eventObject.pageX);
+          alert(eventObject.pageY);
+          eventObject.preventDefault();
+        });
      });
     </script>
 
@@ -44,6 +47,7 @@
       <li>M&amp;Ms</li>
     </ul>
 
+    <a href="http://www.facebook.com">Catch up on both of my friends</a>
     <a href="http://www.google.com">
          Don't Search With Google
     </a>
